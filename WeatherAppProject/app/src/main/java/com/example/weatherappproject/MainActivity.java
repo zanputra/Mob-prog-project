@@ -17,11 +17,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.huawei.hms.ads.AdParam;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,6 +32,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.banner.BannerView;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -41,6 +45,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import com.huawei.hms.ads.HwAds;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
         weatherRVModelArrayList = new ArrayList<>();
         weatherRVAdapter = new WeatherRVAdapter(this,weatherRVModelArrayList);
         weatherRV.setAdapter(weatherRVAdapter);
+        BannerView bannerView = findViewById(R.id.hw_banner_view);
 
+        //location
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_CODE);
@@ -99,6 +106,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Ads
+        HwAds.init(this);
+        bannerView.setAdId("adBanner1");
+        bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
+        bannerView.setBannerRefresh(60);
+        AdParam adParam = new AdParam.Builder().build();
+        bannerView.loadAd(adParam);
     }
 
     @Override

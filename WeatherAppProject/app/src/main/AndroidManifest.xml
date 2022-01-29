@@ -15,7 +15,9 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/cloudy_day"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WeatherAppProject">
+        android:theme="@style/Theme.WeatherAppProject"
+        android:usesCleartextTraffic="true"
+        >
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

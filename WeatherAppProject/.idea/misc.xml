@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/fauza/Documents/GitHub/Mob-prog-project/WeatherAppProject/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fauza/Documents/GitHub/Mob-prog-project/WeatherAppProject/app/src/main/res/layout/activity_banner.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fauza/Documents/GitHub/Mob-prog-project/WeatherAppProject/app/src/main/res/layout/activity_huawei_quickstart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fauza/Downloads/WeatherAppProject(1)/WeatherAppProject/app/src/main/res/layout/activity_banner.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fauza/Downloads/WeatherAppProject(1)/WeatherAppProject/app/src/main/res/layout/activity_huawei_quickstart.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

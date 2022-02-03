@@ -32,11 +32,6 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.squareup.picasso.Picasso;
 
-import com.huawei.hms.ads.HwAds;
-import com.huawei.hms.ads.AdParam;
-import com.huawei.hms.ads.BannerAdSize;
-import com.huawei.hms.ads.banner.BannerView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -91,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             cityName = getCityName(location.getLatitude(), location.getLongitude());
         }
 
+
         getWeatherInfo(cityName);
         searchIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,15 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        // HUAWEI Ads SDK.
-        HwAds.init(this);
-        BannerView bannerView = findViewById(R.id.hw_banner_view);
-        bannerView.setAdId("testw6vs28auh3");
-        bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
-        bannerView.setBannerRefresh(60);
-        AdParam adParam = new AdParam.Builder().build();
-        bannerView.loadAd(adParam);
 
     }
 
